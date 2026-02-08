@@ -1,0 +1,14 @@
+C:\MYHOME\HEL\Csharp\winforms\bin\Debug\net9.0-windows\winforms.exe
+C:\MYHOME\HEL\Csharp\winforms\bin\Debug\net9.0-windows\winforms.deps.json
+C:\MYHOME\HEL\Csharp\winforms\bin\Debug\net9.0-windows\winforms.runtimeconfig.json
+C:\MYHOME\HEL\Csharp\winforms\bin\Debug\net9.0-windows\winforms.dll
+C:\MYHOME\HEL\Csharp\winforms\bin\Debug\net9.0-windows\winforms.pdb
+C:\MYHOME\HEL\Csharp\winforms\obj\Debug\net9.0-windows\winforms.GeneratedMSBuildEditorConfig.editorconfig
+C:\MYHOME\HEL\Csharp\winforms\obj\Debug\net9.0-windows\winforms.AssemblyInfoInputs.cache
+C:\MYHOME\HEL\Csharp\winforms\obj\Debug\net9.0-windows\winforms.AssemblyInfo.cs
+C:\MYHOME\HEL\Csharp\winforms\obj\Debug\net9.0-windows\winforms.csproj.CoreCompileInputs.cache
+C:\MYHOME\HEL\Csharp\winforms\obj\Debug\net9.0-windows\winforms.dll
+C:\MYHOME\HEL\Csharp\winforms\obj\Debug\net9.0-windows\refint\winforms.dll
+C:\MYHOME\HEL\Csharp\winforms\obj\Debug\net9.0-windows\winforms.pdb
+C:\MYHOME\HEL\Csharp\winforms\obj\Debug\net9.0-windows\winforms.genruntimeconfig.cache
+C:\MYHOME\HEL\Csharp\winforms\obj\Debug\net9.0-windows\ref\winforms.dll

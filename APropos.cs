@@ -26,7 +26,9 @@ public partial class APropos : Form
 		main_panel.Location = new Point(15, 15);
 		main_panel.Size = new Size(this.Width-50, 270);
 		main_panel.BorderStyle = BorderStyle.Fixed3D;
-
+		main_panel.MouseEnter += SetHelpCursor;
+		main_panel.MouseLeave += SetDefaultCursorInPanel;
+	
 		PictureBox pb = new PictureBox();
 		pb.Image = Image.FromFile("logo.jpg");
 		pb.Width = 130;
@@ -51,11 +53,32 @@ public partial class APropos : Form
 		btn.Click += exit_bye;
 		btn.AutoSize = true;
 		btn.Location = new Point(200, 300);
+		btn.MouseHover += SetCrossCursor;
+		btn.MouseLeave += SetDefaultCursor;
 
 		this.Controls.Add(main_panel);
 		this.Controls.Add(btn);
 	}
+
+	private void SetCrossCursor(object sender, EventArgs e){
+		this.Cursor = Cursors.Cross;
+	}
+
+	private void SetHelpCursor(object sender, EventArgs e){
+		this.Cursor = Cursors.Help;
+	}
+
+	private void SetDefaultCursorInPanel(object sender, EventArgs e){
+		Point clientMousePos = main_panel.PointToClient(Control.MousePosition);
+		if(main_panel.ClientRectangle.Contains(clientMousePos)) return;
+		this.Cursor = Cursors.Default;
+	}
+
+	private void SetDefaultCursor(object sender, EventArgs e){
+		this.Cursor = Cursors.Default;
+	}	
 	
+
 	private void exit_bye(object sender, EventArgs e){
 		this.Close();
 	}

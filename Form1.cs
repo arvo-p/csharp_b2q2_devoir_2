@@ -16,11 +16,15 @@ public partial class Form1 : Form
 		System.Environment.Exit(1);
 	}
 
-	private void OpenAPropos(object sender, EventArgs e){
+	private void OuvrirListe(object sender, EventArgs e){
+		(new Liste()).Show();
+	}
+
+	private void OuvrirAPropos(object sender, EventArgs e){
 		(new APropos()).ShowDialog();
 	}
 
-	private void OpenLoadingBar(object sender, EventArgs e){
+	private void OuvrirLoadingBar(object sender, EventArgs e){
 		LoadingBarUI lbu = new LoadingBarUI();
 		lbu.ShowDialog();
 	}
@@ -35,13 +39,14 @@ public partial class Form1 : Form
 		ToolStripMenuItem helpMenuItem = new ToolStripMenuItem("&Aide");
 	
 		ToolStripMenuItem listItem = new ToolStripMenuItem("&Liste");
+			listItem.Click += OuvrirListe;
 		ToolStripMenuItem progressionbarItem = new ToolStripMenuItem("&Barre de progression");
-			progressionbarItem.Click += OpenLoadingBar;
+			progressionbarItem.Click += OuvrirLoadingBar;
 		ToolStripMenuItem exitItem = new ToolStripMenuItem("&Quitter");
 			exitItem.Click += Exit_Click;
 		ToolStripMenuItem editorItem = new ToolStripMenuItem("&Editeur");
 		ToolStripMenuItem aboutItem = new ToolStripMenuItem("&A Propos");
-			aboutItem.Click += OpenAPropos;
+			aboutItem.Click += OuvrirAPropos;
 
 		MainMenu.Items.Add(controlsMenuItem);
 			controlsMenuItem.DropDownItems.Add(listItem);

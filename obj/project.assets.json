@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MYHOME\\HEL\\Csharp\\winforms\\winforms.csproj",
+      "projectUniqueName": "C:\\MYHOME\\HEL\\Csharp\\winforms2\\winforms.csproj",
       "projectName": "winforms",
-      "projectPath": "C:\\MYHOME\\HEL\\Csharp\\winforms\\winforms.csproj",
+      "projectPath": "C:\\MYHOME\\HEL\\Csharp\\winforms2\\winforms.csproj",
       "packagesPath": "C:\\Users\\gsppe\\.nuget\\packages\\",
-      "outputPath": "C:\\MYHOME\\HEL\\Csharp\\winforms\\obj\\",
+      "outputPath": "C:\\MYHOME\\HEL\\Csharp\\winforms2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

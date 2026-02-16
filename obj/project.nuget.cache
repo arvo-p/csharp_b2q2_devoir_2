@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "yAKZq0CisuA=",
+  "dgSpecHash": "3TKs9XYDsYA=",
   "success": true,
   "projectFilePath": "C:\\MYHOME\\HEL\\Csharp\\winforms2\\winforms.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gsppe\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
+    "C:\\Users\\gsppe\\.nuget\\packages\\concentus\\2.2.2\\concentus.2.2.2.nupkg.sha512",
+    "C:\\Users\\gsppe\\.nuget\\packages\\dnsclient\\1.8.0\\dnsclient.1.8.0.nupkg.sha512",
+    "C:\\Users\\gsppe\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\gsppe\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\gsppe\\.nuget\\packages\\sipsorcery\\10.0.3\\sipsorcery.10.0.3.nupkg.sha512",
+    "C:\\Users\\gsppe\\.nuget\\packages\\sipsorcery.websocketsharp\\0.0.1\\sipsorcery.websocketsharp.0.0.1.nupkg.sha512",
+    "C:\\Users\\gsppe\\.nuget\\packages\\sipsorcerymedia.abstractions\\8.0.12\\sipsorcerymedia.abstractions.8.0.12.nupkg.sha512",
+    "C:\\Users\\gsppe\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\gsppe\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

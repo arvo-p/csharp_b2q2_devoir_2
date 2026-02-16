@@ -1,9 +1,17 @@
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace winforms;
 
 public partial class Liste : Form
 {
+
+	[DllImport("user32.dll", EntryPoint = "SendMessage")] public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam); 
+	const int LB_SetItemData = 0x019A;  
+	const int LB_GetItemData = 0x0199;  
+
+	int last_secret_id = -1;
+
 	GroupBox gbMain;
 	ListBox lbPerson;
 	TextBox tbNom;
@@ -77,6 +85,28 @@ public partial class Liste : Form
 		this.Controls.Add(lbPerson);
 	}
 
+	private void SendSecretIndex(ListBox LBtarget, int index, int secret_index){
+		SendMessage((IntPtr)LBtarget.Handle, LB_SetItemData, (IntPtr)index, (IntPtr)secret_index);
+	}
+
+	private long GetSecretIndex(ListBox LBtarget, int index){
+		return SendMessage((IntPtr)LBtarget.Handle, LB_GetItemData, (IntPtr)index, 0);
+	}
+
+	private int GetPositionAlphabeticOrder(ListBox LBtarget, string name){
+		bool place_found = false;
+		foreach(var item in lbPerson.Items){
+			int char_index_item = 0;
+			string strItem = item.ToString().ToLower();
+			strItem = strItem.Substring(strItem.IndexOf(" ")+1);
+			
+			int compare = string.Compare(name, strItem);
+			if(compare <= 0) return LBtarget.Items.IndexOf(item);
+		}
+
+		return LBtarget.Items.Count;
+	}
+
 	private void DoEventAjouter(object sender, EventArgs e){
 		ActivateForm(false);
 	}
@@ -89,17 +119,19 @@ public partial class Liste : Form
 		lbPerson.Items.Remove(selectedItems[0]);
 	}
 
-	int appendPosition = -1;
-
 	private void DoEventConfirmer(object sender, EventArgs e){
 		string text = cbQualite.SelectedItem.ToString() + " " + tbNom.Text;
 		
+		int appendPosition = GetPositionAlphabeticOrder(lbPerson, tbNom.Text);
 		if(appendPosition == -1){
 			lbPerson.Items.Add(text);
 		}else{
 			lbPerson.Items.Insert(appendPosition, text);
-			appendPosition = -1;
 		}
+	
+		last_secret_id += 1;
+
+		SendSecretIndex(lbPerson, appendPosition, last_secret_id);
 		
 		tbNom.Text = "";
 		ActivateForm(true);
@@ -116,9 +148,7 @@ public partial class Liste : Form
 		cbQualite.SelectedItem = words[0];
 
 		tbNom.Text = string.Join(" ", words, 1, words.Count()-1);
-		appendPosition = lbPerson.SelectedIndex;
 		lbPerson.Items.Remove(selectedItems[0]);
-		Debug.WriteLine("append position is "  + appendPosition);
 
 		ActivateForm(false);
 	}
@@ -133,9 +163,16 @@ public partial class Liste : Form
 	
 		string text = File.ReadAllText(dlg.FileName);
 		string line;
+		last_secret_id = 0;
 		using (StringReader sr = new StringReader(text)) {
-			while ((line = sr.ReadLine()) != null) {
-				lbPerson.Items.Add(line);
+			int indexList = 0;
+			while ((line = sr.ReadLine()) != null){
+				string[] words = line.Split('#');
+				int indexSecret = Convert.ToInt32(words[1]);
+				if(indexSecret > last_secret_id) last_secret_id = indexSecret;
+				lbPerson.Items.Add(words[0]);
+				SendSecretIndex(lbPerson, indexList, indexSecret); 
+				indexList++;
 			}
 		}
 	}
@@ -147,9 +184,11 @@ public partial class Liste : Form
 		string destination_filename = dlg.FileName;
 		string text = "";
 
-		foreach(var item in lbPerson.Items)
-			text += item.ToString() + "\n";
-		
+		foreach(var item in lbPerson.Items){
+			int indexSecret = (int)GetSecretIndex(lbPerson, lbPerson.Items.IndexOf(item));
+			text += item.ToString() + "#" + indexSecret.ToString() + "\n";
+		}
+
 		File.WriteAllText(destination_filename, text);
 	}
 

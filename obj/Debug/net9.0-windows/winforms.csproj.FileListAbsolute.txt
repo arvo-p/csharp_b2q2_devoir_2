@@ -28,3 +28,13 @@ C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\winforms.dll
 C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\winforms.pdb
 C:\MYHOME\HEL\Csharp\winforms2\obj\Debug\net9.0-windows\winforms.genruntimeconfig.cache
 C:\MYHOME\HEL\Csharp\winforms2\obj\Debug\net9.0-windows\ref\winforms.dll
+C:\MYHOME\HEL\Csharp\winforms2\obj\Debug\net9.0-windows\winforms.csproj.AssemblyReference.cache
+C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\BouncyCastle.Cryptography.dll
+C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\Concentus.dll
+C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\DnsClient.dll
+C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\SIPSorcery.dll
+C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\websocket-sharp.dll
+C:\MYHOME\HEL\Csharp\winforms2\bin\Debug\net9.0-windows\SIPSorceryMedia.Abstractions.dll
+C:\MYHOME\HEL\Csharp\winforms2\obj\Debug\net9.0-windows\winforms.csproj.Up2Date
